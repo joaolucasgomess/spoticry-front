@@ -1,1 +1,1 @@
-# SpoticryFront
+# Spoticry
