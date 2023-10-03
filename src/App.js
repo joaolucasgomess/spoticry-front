@@ -1,4 +1,3 @@
-import { HomePage } from "./pages/HomePage";
 import global from "./styles/global.css";
 import { BrowserRouter } from "react-router-dom"
 import  Router  from "./routes/Router"

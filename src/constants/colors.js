@@ -3,5 +3,6 @@ export const COLORS = {
     darkGray: "#272727",
     indigo: "#4B0082",
     white: "#FCFCFC",
+    darkYellow: "#F0D500",
   };
   
