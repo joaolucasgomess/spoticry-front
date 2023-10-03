@@ -6,12 +6,15 @@ export const FooterContainer = styled.footer`
   height: 300px;
   background-color: ${COLORS.yellow};
   grid-template-columns: 1fr 2fr 1fr;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 0 15%;
 `;
 
 export const FooterImage = styled.img`
   object-fit: cover;
   align-self: center;
-  padding-left: 60px;
 `;
 
 export const FooterGrid = styled.div`

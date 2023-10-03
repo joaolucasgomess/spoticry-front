@@ -6,7 +6,7 @@ import {
   FooterInfoText,
   FakeLink,
   SocialMediaContainer,
-  FooterNotes
+  FooterNotes,
 } from "./Styles";
 import logoFooter from "../../assets/logoFooter.png";
 import StyledFacebookIcon from "../../assets/icons/StyledFacebookIcon";
@@ -53,12 +53,12 @@ export const Footer = () => {
       </FooterGrid>
       <FooterNotes>
         <SocialMediaContainer>
-          <StyledFacebookIcon/>
-          <StyledInstagramIcon/>
-          <StyledTwitterIcon/>
+          <StyledFacebookIcon />
+          <StyledInstagramIcon />
+          <StyledTwitterIcon />
         </SocialMediaContainer>
         <p>Desenvolvido por Flávio</p>
-    </FooterNotes>
+      </FooterNotes>
     </FooterContainer>
   );
 };

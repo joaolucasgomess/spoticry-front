@@ -11,6 +11,7 @@ export const BannerContainer = styled.div`
   background-color: ${COLORS.darkGray};
   top: 0;
   z-index: 1;
+  padding: 0 15%;
 `;
 
 export const BannerTitle = styled.h1`

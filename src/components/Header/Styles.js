@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
   background-color: ${COLORS.yellow};
   top: 0;
   z-index: 1;
+  padding: 0 15%;
 `;
 
 export const ButtonsContainer = styled.div`

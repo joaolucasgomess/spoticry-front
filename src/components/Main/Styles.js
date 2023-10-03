@@ -6,7 +6,8 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 90vh;
+  height: 60vh;
+  min-height: 500px;
   background-color: ${COLORS.white};
 `;
 
