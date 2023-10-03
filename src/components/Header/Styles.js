@@ -11,7 +11,6 @@ export const HeaderContainer = styled.div`
   align-items: center;
   height: 100px;
   background-color: ${COLORS.yellow};
-  position: sticky;
   top: 0;
   z-index: 1;
 `;

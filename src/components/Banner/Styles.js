@@ -9,7 +9,6 @@ export const BannerContainer = styled.div`
   height: 250px;
   gap: 30px;
   background-color: ${COLORS.darkGray};
-  position: sticky;
   top: 0;
   z-index: 1;
 `;
