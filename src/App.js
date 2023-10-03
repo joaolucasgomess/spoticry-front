@@ -1,11 +1,14 @@
-import global from "./styles/global.css"
+import { HomePage } from "./pages/HomePage";
+import global from "./styles/global.css";
+import { BrowserRouter } from "react-router-dom"
+import  Router  from "./routes/Router"
+
 
 function App() {
   return (
-    <div>
-      <h1>Teste</h1>
-      <p>teste2</p>
-    </div>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 

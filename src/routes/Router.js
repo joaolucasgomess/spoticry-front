@@ -1,16 +1,14 @@
 // routes/Router.js
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomePage } from "../pages/HomePage";
+import { LoginPage } from "../pages/LoginPage";
 
 const Router = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={HomePage} />
-      <Route path="/profile" component={ProfilePage} />
-      {/* ... outras rotas */}
-    </Switch>
-  </BrowserRouter>
+  <Routes>
+    <Route path="/" exact element={<HomePage />} />
+    <Route path="/login" element={<LoginPage />} />
+  </Routes>
 );
 
 export default Router;
