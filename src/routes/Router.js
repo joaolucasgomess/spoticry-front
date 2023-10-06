@@ -1,13 +1,15 @@
 // routes/Router.js
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
+import FeedPage from "../pages/FeedPage";
 
 const Router = () => (
   <Routes>
-    <Route path="/" exact element={<LoginPage />} />
+    <Route path="/" exact element={<HomePage />} />
     <Route path="/login" element={<LoginPage />} />
+    <Route path="/feed" element={<FeedPage />} />
   </Routes>
 );
 
