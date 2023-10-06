@@ -10,6 +10,7 @@ import logoLogin from "../../assets/logoLogin.png";
 import useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import SimpleText from "../SimpleText/SimpleText";
+import { login } from "../../services/users";
 
 export const LoginForm = () => {
   const [form, onChange, clear] = useForm({ email: "", password: "" });
@@ -17,7 +18,7 @@ export const LoginForm = () => {
 
   const onSubmitLogin = (event) => {
     event.preventDefault();
-    // login(form, navigate, setRightButtonText);
+    login(form, navigate);
   };
 
   return (
@@ -29,13 +30,13 @@ export const LoginForm = () => {
         <LoginTitle>Sinta a música, viva a emoção</LoginTitle>
         <div>
           <SimpleText text="Email:" />
-          <StyledInput type="email" name="email" />
+          <StyledInput type="email" name="email" onChange={onChange} required={true} value={form.email} />
         </div>
         <div>
           <SimpleText text="Senha:" />
-          <StyledInput type="password" name="password" />
+          <StyledInput type="password" name="password" onChange={onChange} required={true} value={form.password} />
         </div>
-        <StyledButton>Entrar</StyledButton>
+        <StyledButton type={"submit"} value={"Entrar"} onClick={onSubmitLogin}/>
       </StyledForm>
     </FormContainer>
   );
