@@ -11,6 +11,7 @@ export const login = (body, navigate) => {
     //   goToFeed(navigate)
     })
     .catch((err) => {
-      alert(err.response);
+      console.log(err);      
+      alert(err.response.data.error);
     });
 };
