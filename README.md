@@ -2,7 +2,7 @@
 
 Uma aplicação web para gerenciar músicas e playlists utilizando a API SpotiCry.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/42364016-d25a-44df-b97b-6f5cd49f2c75/e06a54b7-bc48-41cc-9c5d-a49f9e70e049/Untitled.png)
+![exemplo](exemploFront.png)
 
 ## **Índice**
 
