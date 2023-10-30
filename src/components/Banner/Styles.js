@@ -6,7 +6,7 @@ export const BannerContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 250px;
+  min-height: 270px;
   gap: 30px;
   background-color: ${COLORS.darkGray};
   top: 0;
