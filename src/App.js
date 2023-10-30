@@ -1,11 +1,10 @@
-import global from "./styles/global.css";
 import { BrowserRouter } from "react-router-dom"
 import  Router  from "./routes/Router"
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/spoticry-front">
       <Router />
     </BrowserRouter>
   );
