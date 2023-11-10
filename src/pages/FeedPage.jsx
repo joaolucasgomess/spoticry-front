@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getPlaylistsFromUser } from "../services/playlist";
+import { useProtectedPage } from "../hooks/useProtectedPage"; 
 
 export function FeedPage() {
+  useProtectedPage()
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
