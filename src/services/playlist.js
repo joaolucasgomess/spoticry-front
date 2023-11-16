@@ -13,3 +13,28 @@ export const getPlaylistsFromUser = () => {
             },
         });
 };
+
+export const getAllPlaylists = () => {
+    const token = localStorage.getItem("token")
+        return axios.get(`${BASE_URL}playlist`, {
+            headers: {
+                Authorization: token,
+            },
+        });   
+}
+
+export const createPlaylist = (playlist) => {
+    const token = localStorage.getItem("token")
+    const userId = getTokenData(token).id
+        return axios.post(`${BASE_URL}playlist`, {
+            headers: {
+                Authorization: token,
+            },
+            body: {
+                userId: userId,
+                songs: '',
+                description: playlist.description,
+                name: playlist.name
+            }
+        })
+}

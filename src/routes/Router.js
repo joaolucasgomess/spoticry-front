@@ -3,13 +3,17 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
-import FeedPage from "../pages/FeedPage";
+import ListPlaylitsPage from "../pages/ListPlaylitsPage";
+import { CreateNewPlaylistPage } from "../pages/CreateNewPlaylistPage";
+import { DetailsPlaylistPage } from "../pages/DetailsPlaylistPage";
 
 const Router = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/login" element={<LoginPage />} />
-    <Route path="/feed" element={<FeedPage />} />
+    <Route path="/Playlists" element={<ListPlaylitsPage />} />
+    <Route path="/Playlist/:playlistId" element={<DetailsPlaylistPage />} />
+    <Route path="/Nova Playlist" element={<CreateNewPlaylistPage />} />
   </Routes>
 );
 

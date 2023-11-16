@@ -19,7 +19,6 @@ export const Header = () => {
     <HeaderContainer>
       <HeaderLogo src={logo} alt="logo" />
       <ButtonsContainer>
-        <Button>Inscrever</Button>
         <Button onClick={login}>Entrar</Button>
       </ButtonsContainer>
     </HeaderContainer>
