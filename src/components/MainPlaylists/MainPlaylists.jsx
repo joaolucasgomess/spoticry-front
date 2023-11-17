@@ -9,8 +9,8 @@ import { Loading } from "../Loading/Loading";
 
 export const MainPlaylists = () => {
     const [playlists, setPlaylists] = useState([]);
-    const navigate = useNavigate()
     const [isLoading, setLoading] = useState(true)
+    const navigate = useNavigate()
 
     useEffect(() => {
       fetchPlaylists();

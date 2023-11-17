@@ -23,6 +23,15 @@ export const getAllPlaylists = () => {
         });   
 }
 
+export const getPlaylistById = (playlistId) => {
+    const token = localStorage.getItem("token")
+        return axios.get(`${BASE_URL}playlist/${playlistId}`, {
+            headers: {
+                Authorization: token,
+            }
+        });   
+}
+
 export const createPlaylist = (playlist) => {
     const token = localStorage.getItem("token")
     const userId = getTokenData(token).id
