@@ -10,6 +10,7 @@ export const Section = styled.div`
 `
 
 export const ButtonCreate = styled.button`
+    cursor: pointer;
     width: 2.5rem;
     height: 2.5rem;
     background-color: ${COLORS.darkYellow};
