@@ -6,7 +6,7 @@ import {
   Button,
   HeaderLogo,
 } from "./Styles";
-import { goToLoginPage } from "../../routes/Coordinator";
+import { goToLoginPage, goToHomePage } from "../../routes/Coordinator";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -15,11 +15,17 @@ export const Header = () => {
     localStorage.removeItem("token");
     goToLoginPage(navigate);
   };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    goToHomePage(navigate);
+  };
   return (
     <HeaderContainer>
       <HeaderLogo src={logo} alt="logo" />
       <ButtonsContainer>
         <Button onClick={login}>Entrar</Button>
+        <Button onClick={logout}>Sair</Button>
       </ButtonsContainer>
     </HeaderContainer>
   );

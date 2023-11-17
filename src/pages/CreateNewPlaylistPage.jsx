@@ -1,12 +1,15 @@
+import { Header } from '../components/Header/Header'
+import { Footer } from '../components/Footer/Footer'
+import { MainDetailPlaylist } from '../components/MainDetailPlaylist/MainDetailPlaylist'
+
 
 export const CreateNewPlaylistPage = () => {
 
     return(
         <>
-            <p>Pagina para criar playlist</p>
-            {
-                //TODO
-            }
+            <Header/>
+            <MainDetailPlaylist/>
+            <Footer/>
         </>
     )
 }
