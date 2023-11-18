@@ -28,6 +28,7 @@ export const MainPlaylists = () => {
 
     const goCreateNewPlaylist = () => {
         goToCreatePlaylistPage(navigate)
+        
     }
 
     return(
@@ -35,7 +36,7 @@ export const MainPlaylists = () => {
             {!isLoading ? 
                 <>
                     <SectionCreateNew
-                        title="Playlits"
+                        title="Playlists"
                         functionCreate={goCreateNewPlaylist}
                     />
                     <ContainerList>
