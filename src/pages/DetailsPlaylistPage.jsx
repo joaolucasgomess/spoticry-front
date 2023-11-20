@@ -15,7 +15,6 @@ export const DetailsPlaylistPage = () => {
             <MainDetailPlaylist
                 playlistId={pathParams}
             />
-            <Footer/>
         </>
     )
 }

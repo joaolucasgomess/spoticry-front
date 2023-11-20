@@ -42,7 +42,7 @@ export const Header = () => {
       <HeaderLogo src={logo} alt="logo" />
       {email ? (
         <>
-          <p>Olá, {email}!</p>
+          <p><b>Olá, {email}!</b></p>
           <IconButton
             size="large"
             sx={{ marginLeft: 'auto' }}

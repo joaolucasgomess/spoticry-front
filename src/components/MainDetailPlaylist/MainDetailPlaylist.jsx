@@ -1,5 +1,5 @@
 import { urlImage } from '../../constants/urls'
-import { ContainerTitle, ContainerNavBar } from './Styles'
+import { ContainerTitle, ContainerNavBar, PlayButton } from './Styles'
 import { ListSong } from '../ListSong/ListSong'
 import React, { useState, useEffect } from "react";
 import { Loading } from "../Loading/Loading";
@@ -16,7 +16,7 @@ export const MainDetailPlaylist = (props) => {
     const fetchPlaylistsById = async () => {
         try {
             const response = await getPlaylistById(props.playlistId.playlistId)
-            setPlaylist(response.data.playlist);
+            setPlaylist(response.data.playlist)
             setIsLoading(false)
         } catch (error) {
             console.error("Erro ao buscar playlists:", error)
@@ -25,7 +25,7 @@ export const MainDetailPlaylist = (props) => {
 
     return (
         <>
-            {!props.playlistId.playlistId ? setIsLoading(false) : !isLoading ?
+            {!isLoading ?
                 <>
                     <ContainerTitle>
                         <div>
@@ -33,14 +33,19 @@ export const MainDetailPlaylist = (props) => {
                         </div>
                         <div>
                             <p>Playlist</p>
-                            {!props.playlistId.playlistId? 
+                            {!props.playlistId.playlistId ?
                                 <h1>My Playlist</h1>
-                            :   <h1>{playlist._name}</h1>}
+                                : <h1>{playlist._name}</h1>
+                            }
+                            {!props.playlistId.playlistId ?
+                                <h1></h1>
+                                : <p>{playlist._description}</p>
+                            }
                         </div>
                     </ContainerTitle>
                     <ContainerNavBar>
                         <div>
-                            <button>Player</button>
+                            <PlayButton>Play</PlayButton>
                             <button>Download</button>
                             <button>Mais</button>
                         </div>
@@ -48,9 +53,11 @@ export const MainDetailPlaylist = (props) => {
                             <input type="text" placeholder="Pesquisa" />
                         </div>
                     </ContainerNavBar>
-                    <ListSong />
+                    <ListSong 
+                        playlistSongs={playlist._songs} 
+                    />
                 </>
-            : <Loading/>}
+                : <Loading />}
         </>
     )
 }

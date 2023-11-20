@@ -19,6 +19,7 @@ export const MainPlaylists = () => {
     const fetchPlaylists = async () => {
       try {
         const response = await getAllPlaylists();
+        console.log(response.data.playlists)
         setPlaylists(response.data.playlists);
         setLoading(false)
       } catch (error) {

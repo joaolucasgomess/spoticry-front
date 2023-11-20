@@ -3,7 +3,7 @@ import { BASE_URL } from "../constants/urls";
 
 export const getSongById = (songId) => {
     const token = localStorage.getItem("token")
-        return axios.get(`${BASE_URL}song/:${songId}`, {
+        return axios.get(`${BASE_URL}song/${songId}`, {
             headers: {
                 Authorization: token,
             }

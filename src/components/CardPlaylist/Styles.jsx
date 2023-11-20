@@ -1,8 +1,9 @@
 import styled from  'styled-components'
+import { COLORS } from '../../constants/colors'
 
 export const Card = styled.div`
     cursor: pointer;
-    background-color: #F2F2F2;
+    background-color: ${COLORS.darkWhite};
     margin: 2.5rem;
     padding: 1.2rem;
     display: flex;
