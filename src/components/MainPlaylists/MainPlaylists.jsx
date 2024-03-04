@@ -18,12 +18,11 @@ export const MainPlaylists = () => {
   
     const fetchPlaylists = async () => {
       try {
-        const response = await getAllPlaylists();
-        console.log(response.data.playlists)
-        setPlaylists(response.data.playlists);
+        const response = await getAllPlaylists()
+        setPlaylists(response.data.allPlaylists)
         setLoading(false)
       } catch (error) {
-        console.error("Erro ao buscar playlists:", error);
+        console.error("Erro ao buscar playlists:", error)
       }
     };  
 
@@ -42,12 +41,14 @@ export const MainPlaylists = () => {
                     />
                     <ContainerList>
                         {Array.isArray(playlists) &&
-                            playlists.map((playlist) => (
-                                <CardPlaylist
-                                    key={playlist._name}
-                                    infoPlaylist={playlist}
-                                />
-                            ))
+                            playlists.map((playlist) => {
+                                return(
+                                    <CardPlaylist
+                                        key={playlist._name}
+                                        infoPlaylist={playlist}
+                                    />
+                                )
+}                           )
                         }
                     </ContainerList>
                 </>

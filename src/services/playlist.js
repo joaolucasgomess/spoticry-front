@@ -16,7 +16,7 @@ export const getPlaylistsFromUser = () => {
 
 export const getAllPlaylists = () => {
     const token = localStorage.getItem("token")
-        return axios.get(`${BASE_URL}playlist`, {
+        return axios.get(`${BASE_URL}playlist/allPlaylists`, {
             headers: {
                 Authorization: token,
             },

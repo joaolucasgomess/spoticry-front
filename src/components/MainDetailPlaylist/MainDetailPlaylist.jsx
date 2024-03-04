@@ -16,7 +16,7 @@ export const MainDetailPlaylist = (props) => {
     const fetchPlaylistsById = async () => {
         try {
             const response = await getPlaylistById(props.playlistId.playlistId)
-            setPlaylist(response.data.playlist)
+            setPlaylist(response.data.playlistById)
             setIsLoading(false)
         } catch (error) {
             console.error("Erro ao buscar playlists:", error)
@@ -37,10 +37,6 @@ export const MainDetailPlaylist = (props) => {
                                 <h1>My Playlist</h1>
                                 : <h1>{playlist._name}</h1>
                             }
-                            {!props.playlistId.playlistId ?
-                                <h1></h1>
-                                : <p>{playlist._description}</p>
-                            }
                         </div>
                     </ContainerTitle>
                     <ContainerNavBar>
@@ -54,7 +50,7 @@ export const MainDetailPlaylist = (props) => {
                         </div>
                     </ContainerNavBar>
                     <ListSong 
-                        playlistSongs={playlist._songs} 
+                        playlistTracks={playlist._tracks} 
                     />
                 </>
                 : <Loading />}

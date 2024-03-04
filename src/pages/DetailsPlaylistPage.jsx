@@ -7,7 +7,6 @@ import { MainDetailPlaylist } from '../components/MainDetailPlaylist/MainDetailP
 export const DetailsPlaylistPage = () => {
 
     const pathParams = useParams()
-    console.log(pathParams)
 
     return(
         <>

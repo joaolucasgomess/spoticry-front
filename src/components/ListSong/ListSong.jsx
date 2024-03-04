@@ -1,28 +1,29 @@
-import { getSongById } from '../../services/songs'
+import { getArtistById } from '../../services/artist'
 import { useState, useEffect } from 'react'
 import { Loading } from '../Loading/Loading'
 import { TableListSong, Title, LineTitle, ContainerTable } from './Styles'
 import { urlImage } from '../../constants/urls'
 
 export const ListSong = (props) => {
-    const [arraySongs, setArraySongs] = useState([])
-    const [isLoading, setLoading] = useState(true)
+    const [artist, setArtist] = useState([])
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
-        getAllPlaylistSongs()
+        getArtistsFromTracks()
     },[])
 
-    const getAllPlaylistSongs = async () => {
-        const songsPromises = []
+    const getArtistsFromTracks = async () => {
+        const artistPromises = []
 
-        for(const songId of props.playlistSongs){
-            songsPromises.push(getSongById(songId))
+        for(const track of props.playlistTracks){
+            artistPromises.push(getArtistById(track._idArtist))
         }
 
-        const result = await Promise.all(songsPromises)
-        const dataFromResult = result.map((res) => res.data)
+        const result = await Promise.all(artistPromises)
+        const dataFromResult =  result.map((res) => res.data)
 
-        setArraySongs(dataFromResult)
+        setArtist(dataFromResult)
+        console.log(artist)
         setLoading(false)
     }
 
@@ -38,15 +39,15 @@ export const ListSong = (props) => {
                             <Title><p>URL</p></Title>
                         </tr>
                         {
-                            arraySongs.map((positionArraySongs) => (
-                                <tr key={positionArraySongs.song.url}>
+                            props.playlistTracks.map((track) => (
+                                <tr key={track._url}>
                                     <td><p>1</p></td>
                                     <LineTitle>
                                         <img src={urlImage} alt="song-icon" width="50vw"/>
-                                        <p>{positionArraySongs.song.title}</p>
+                                        <p>{track._name}</p>
                                     </LineTitle>
-                                    <td><p>{positionArraySongs.song.artist}</p></td>
-                                    <td><a href={positionArraySongs.song.url}>{positionArraySongs.song.url}</a></td>
+                                    <td><p>{artist._name}</p></td>
+                                    <td><a href={track._url}>{track._url}</a></td>
                                 </tr>  
                             ))
                         }

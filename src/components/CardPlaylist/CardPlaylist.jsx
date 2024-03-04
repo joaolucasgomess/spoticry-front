@@ -17,7 +17,7 @@ export const CardPlaylist = (props) => {
                 <img src={urlImage} alt="Icon" />
             </CardImage>
             <h2><b>{props.infoPlaylist._name}</b></h2>
-            <h3>{props.infoPlaylist._description}</h3>
+            {/*<h3>{props.infoPlaylist._description}</h3>*/}
         </Card>
     )
 }
